@@ -9,22 +9,17 @@ const app = Vue.createApp({
   computed: {
     paragraphClass() {
       return {
+        user1: this.className === 'user1',
+        user2: this.className === 'user2',
         visible: this.showParagraph,
         hidden: !this.showParagraph,
       }
     },
   },
   methods: {
-    recordChange(e) {
-      console.log(e.target.value);
-      this.className = e.target.value;
-    },
     toggleParagraph() {
       this.showParagraph = !this.showParagraph;
     },
-    getColor(e){
-        this.color = e.target.value;
-    }
   },
 });
 
